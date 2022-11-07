@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1,
+        user-scalable=no">
+    <script src="demo/libs/jquery.min.js">
+    </script>
+    <script src="demo/libs/bootstrap.min.js">
+    </script>
+    <link rel="stylesheet"
+        href="demo/libs/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="demo/libs/bootstrap-theme.min.css">
+    <link rel="stylesheet"
+        href="demo/demo.min.css">
+    <link rel="stylesheet" type="text/css"
+        href="css/bootstrap-fullscreen-select.css">
+    <script type="text/javascript"
+        src="js/bootstrap-fullscreen-select.js">
+    </script>
+    <style type="text/css">
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <br/>
+    <b>Bootstrap Fullscreen Select Feature</b>
+     
+<p></p>
+<div id="containerID">
+    <select class="form-control mobileSelect"
+        data-style="primary" multiple>
+        <optgroup label="first group">
+            <option value="samsung">Samsung</option>
+            <option value="sony">Sony</option>
+            <option value="oneplus">OnePlus</option>
+        </optgroup>
+        <!-- Making the second group as disabled-->
+        <optgroup label="Second group"
+            data-style="danger" disabled>
+            <option value="nokia">Nokia</option>
+            <option value="apple">Apple</option>
+        </optgroup>
+    </select>
+</div>
+<script type="text/javascript">
+    $(function () {
+        $('.mobileSelect').mobileSelect({
+            title: 'For all selected phones',
+            // For animate effect of screen
+            animation: 'zoom',
+            padding: {
+                top: '50px',
+                left: '50px',
+                right: '50px',
+                bottom: '50px'
+            }
+        }
+        );
+    });
+</script>
+</body>
+</html>
