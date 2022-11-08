@@ -145,8 +145,22 @@ def updateitem():
             entry4.delete(0, END)
             entry5.delete(0, END)
             entry6.delete(0, END)
-                                      
-                                      
+                                     
+def refreshTable():
+    for data in tree.get_children():
+        tree.delete(data)
+        
+        for array in read():
+            tree.insert(parent='', index='end', iid=array, text='', values=(array))
+
+def read():
+    conn = mysql.connect(host='localhost', password='', user='root', database='pms')
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM pharmacy_management_system")
+    results = cursor.fetchall()
+    conn.commit()
+    conn.close()
+    return results      
 
 def viewitem():
     tree.delete(*tree.get_children())
@@ -259,6 +273,7 @@ tree.column('#4', stretch=NO, minwidth=0, width=80)
 
 tree.pack()
 
+refreshTable()
 
 if __name__ == '__main__':
     root.mainloop()
